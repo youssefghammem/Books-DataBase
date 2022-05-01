@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>${Title}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <style>
+        /* Sticky footer styles */
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+        body {
+            /* Margin bottom by footer height */
+            margin-bottom: 60px;
+        }
+       
+        .container .text-muted {
+            margin: 20px 0;
+        }
+       
+
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            background-color: #EDF5E1
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        .message {
+            color: red;
+            font-weight: bold;
+        }
+        
+
+        
+
+       
+    </style>
+</head>
+<body style="background-color: #83cdca">
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top" style="background-color:#e8a87c">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Book data base</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav" ws-hole="MenuBar"></ul>
+                <ul class="nav navbar-nav navbar-right">
+                    
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+    <div class="container">
+        <div ws-replace="Body">
+            <div ws-template="MainForm">
+                <h1 style="color:#de7b5d">Welcome to DUE Book Data base</h1>
+                <div>
+                    <label for="start" ;font-size: 16px;> Titel :</label>
+                    <input  ws-var="Title" />
+                    <label for="start" ;font-size: 16px;> Author:</label>
+                    <input  ws-var="Author" />
+                    <label for="start" ;font-size: 16px;> Date :</label>
+                    <input  type="number" ws-var="Date" />
+                    <button ws-onclick="Register" style="background-color: #C38D9E; font-size: 16px;">Register</button>
+                    <button ws-onclick="Search" style="background-color: #C38D9E; font-size: 16px;">Search</button>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTseMiP4L8IVmwRMV2UshZCRhlc_SQPVFMc2w&usqp=CAU" alt="Nature" style=" height: 150px; width: 300px;padding-left:40px ">
+                    <div id=" entry"></div>
+
+                    <div class="message">${message}</div>
+                </div>
+                <br />
+                <h4> Books Tabel</h4>
+                <table class="list" wh-hole="window">
+
+                    <thead>
+                        <tr>
+                            <th class="Title">Title</th>
+                            <th class="Author">Author</th>
+                            <th class="Published">Published</th>
+                        </tr>
+                    </thead>
+                    <tbody ws-hole="window">
+                        <tr ws-template="Row">
+                            <td class="Title" ws-hole="Title"></td>
+                            <td class="Author" ws-hole="Author"></td>
+                            <td class="Published" ws-hole="Published"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script ws-replace="scripts"></script>
+</body>
+</html>
