@@ -1,4 +1,4 @@
-Implement a book database as a WebSharper client-server application that allows users to:
+I implemenedt a book database as a WebSharper client-server application that allows users to:
 
 Enter and store books by providing their title, author, and year published.
 
